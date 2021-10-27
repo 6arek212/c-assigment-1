@@ -10,53 +10,55 @@ int main()
     scanf("%d", &x);
     scanf("%d", &y);
 
+    int start, end;
+
     if (x < y)
     {
-        for (int i = x; i <= y; i++)
-        {
-            if (isPrime(i))
-            {
-                printf("number %d is prime \n",i);
-            }
-            if (isArmstrong(i))
-            {
-                printf("number %d is armstrong \n",i);
-            }
-            
-            if (isStrong(i))
-            {
-                printf("number %d is strong \n",i);
-            }
+        start = x;
+        end = y;
+    }
+    else
+    {
+        start = y;
+        end = x;
+    }
 
-            if (isPalindrome(i))
-            {
-                printf("number %d is palindrome \n",i);
-            }
-        }
-    }else{
-         for (int i = y; i <= x; i++)
+    printf("The Armstrong numbers are: ");
+    for (int i = start; i <= end; i++)
+    {
+        if (isArmstrong(i))
         {
-            if (isPrime(i))
-            {
-                printf("number %d is prime \n",i);
-            }
-            if (isArmstrong(i))
-            {
-                printf("number %d is armstrong \n",i);
-            }
-            
-            if (isStrong(i))
-            {
-                printf("number %d is strong \n",i);
-            }
-
-            if (isPalindrome(i))
-            {
-                printf("number %d is palindrome \n",i);
-            }
+            printf("%d ", i);
         }
     }
-    
+
+    printf("\nThe Palindromes are: ");
+    for (int i = start; i <= end; i++)
+    {
+        if (isPalindrome(i))
+        {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\nThe Prime numbers are: ");
+    for (int i = start; i <= end; i++)
+    {
+        if (isPrime(i))
+        {
+            printf("%d ", i);
+        }
+    }
+
+    printf("\nThe Strong numbers are: ");
+    for (int i = start; i <= end; i++)
+    {
+        if (isStrong(i))
+        {
+            printf("%d ", i);
+        }
+    }
+    printf("\n");
 
     return 0;
 }
