@@ -28,7 +28,7 @@ libclassloops.a : advancedClassificationLoop.o basicClassification.o
 
 
 libclassloops.so : advancedClassificationLoop.o basicClassification.o
-	${CC} -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o 
+	${CC} $(FLAGS) -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o 
 
 
 libclassrec.a : advancedClassificationRecursion.o basicClassification.o
@@ -36,7 +36,7 @@ libclassrec.a : advancedClassificationRecursion.o basicClassification.o
 
 
 libclassrec.so : advancedClassificationRecursion.o basicClassification.o
-	${CC} -shared -o  libclassrec.so advancedClassificationRecursion.o basicClassification.o 
+	${CC} $(FLAGS) -shared -o  libclassrec.so advancedClassificationRecursion.o basicClassification.o 
 
 
 
