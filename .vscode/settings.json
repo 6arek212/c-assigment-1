@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "numclass.h": "c",
+        "math.h": "c"
+    }
+}
