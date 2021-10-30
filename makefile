@@ -1,11 +1,20 @@
-
+## -g for debug , Wall warninigs 
 
 CC = gcc
 FLAGS = -Wall -g
 AR = ar
 
+.PHONY : 
+	all
 
 .PHONY : clean
+.PHONY : loops 
+.PHONY : loopd 
+
+loops : libclassloops.a
+loopd : libclassloops.so
+recursives : libclassrec.a
+recursived : libclassrec.so 
 
 
 all:  mains maindloop maindrec
@@ -24,19 +33,19 @@ maindrec: recursived main.o
 
 
 
-loops : advancedClassificationLoop.o basicClassification.o
+libclassloops.a : advancedClassificationLoop.o basicClassification.o
 	${AR} -rcs   libclassloops.a advancedClassificationLoop.o basicClassification.o 
 
 
-loopd : advancedClassificationLoop.o basicClassification.o
+libclassloops.so : advancedClassificationLoop.o basicClassification.o
 	${CC} $(FLAGS) -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o 
 
 
-recursives : advancedClassificationRecursion.o basicClassification.o
+libclassrec.a : advancedClassificationRecursion.o basicClassification.o
 	${AR} -rcs   libclassrec.a advancedClassificationRecursion.o basicClassification.o 
 
 
-recursived : advancedClassificationRecursion.o basicClassification.o
+libclassrec.so : advancedClassificationRecursion.o basicClassification.o
 	${CC} $(FLAGS) -shared -o  libclassrec.so advancedClassificationRecursion.o basicClassification.o 
 
 
