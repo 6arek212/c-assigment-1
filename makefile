@@ -4,9 +4,7 @@ CC = gcc
 FLAGS = -Wall -g
 AR = ar
 
-.PHONY : 
-	all
-
+.PHONY : all
 .PHONY : clean
 .PHONY : loops 
 .PHONY : loopd 
@@ -19,7 +17,7 @@ recursives : libclassrec.a
 recursived : libclassrec.so 
 
 
-all:  mains maindloop maindrec
+all:  mains maindloop maindrec loops
 
 
 
