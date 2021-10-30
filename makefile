@@ -7,6 +7,9 @@ AR = ar
 .PHONY : 
 	all
 
+.PHONY : clean
+
+
 all:  mains maindloop maindrec
 
 
@@ -56,8 +59,5 @@ main.o : main.c NumClass.h
 	$(CC) $(FLAGS) -c main.c
 
 
-
-
-
-clear : 
-	rm -f *.o *.a *.so
+clean : 
+	rm -f *.o *.a *.so *.exe
