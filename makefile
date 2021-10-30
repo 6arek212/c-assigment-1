@@ -5,7 +5,6 @@ FLAGS = -Wall -g
 AR = ar
 
 
-
 .PHONY : clean
 
 
