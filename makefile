@@ -10,6 +10,8 @@ AR = ar
 .PHONY : clean
 .PHONY : loops 
 .PHONY : loopd 
+.PHONY : recursived 
+.PHONY : recursived 
 
 loops : libclassloops.a
 loopd : libclassloops.so
