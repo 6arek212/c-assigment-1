@@ -4,8 +4,7 @@ CC = gcc
 FLAGS = -Wall -g
 AR = ar
 
-.PHONY : 
-	all
+
 
 .PHONY : clean
 
