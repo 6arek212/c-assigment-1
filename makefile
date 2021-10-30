@@ -23,13 +23,13 @@ all:  mains maindloop maindrec
 
 
 
-mains :  recursives  main.o
+mains :  libclassrec.a  main.o
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
-maindloop: loopd main.o 
+maindloop: libclassloops.so main.o 
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so 
 
-maindrec: recursived main.o
+maindrec: libclassrec.so  main.o
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so
 
 
