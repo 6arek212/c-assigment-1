@@ -17,12 +17,15 @@ recursives : libclassrec.a
 recursived : libclassrec.so 
 
 
-all:  mains maindloop maindrec loops
+all:  mainsloop mainsrec maindloop maindrec
 
 
 
-mains :  libclassrec.a  main.o
-	$(CC) $(FLAGS) -o mains main.o libclassrec.a
+mainsloop :  libclassloops.a  main.o
+	$(CC) $(FLAGS) -o mainsloop main.o libclassloops.a
+
+mainsrec :  libclassrec.a main.o
+	$(CC) $(FLAGS) -o mainsrec main.o libclassrec.a
 
 maindloop: libclassloops.so main.o 
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so 
@@ -50,8 +53,11 @@ libclassrec.so : advancedClassificationRecursion.o basicClassification.o
 
 
 
+
+
+
 advancedClassificationLoop.o : advancedClassificationLoop.c NumClass.h 
-		$(CC) $(FLAGS) -c advancedClassificationLoop.c 
+	$(CC) $(FLAGS) -c advancedClassificationLoop.c 
 
 
 advancedClassificationRecursion.o : advancedClassificationRecursion.c NumClass.h 
@@ -64,6 +70,12 @@ basicClassification.o : basicClassification.c NumClass.h
 
 main.o : main.c NumClass.h  
 	$(CC) $(FLAGS) -c main.c
+
+
+
+
+
+
 
 
 clean : 
