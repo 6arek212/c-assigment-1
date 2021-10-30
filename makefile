@@ -14,31 +14,31 @@ all:  mains maindloop maindrec
 
 
 
-mains :  libclassrec.a  main.o
+mains :  recursives  main.o
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
-maindloop: libclassloops.so main.o 
+maindloop: loopd main.o 
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so 
 
-maindrec: libclassrec.so main.o
+maindrec: recursived main.o
 	$(CC) $(FLAGS) -o maindrec main.o ./libclassrec.so
 
 
 
 
-libclassloops.a : advancedClassificationLoop.o basicClassification.o
+loops : advancedClassificationLoop.o basicClassification.o
 	${AR} -rcs   libclassloops.a advancedClassificationLoop.o basicClassification.o 
 
 
-libclassloops.so : advancedClassificationLoop.o basicClassification.o
+loopd : advancedClassificationLoop.o basicClassification.o
 	${CC} $(FLAGS) -shared -o libclassloops.so advancedClassificationLoop.o basicClassification.o 
 
 
-libclassrec.a : advancedClassificationRecursion.o basicClassification.o
+recursives : advancedClassificationRecursion.o basicClassification.o
 	${AR} -rcs   libclassrec.a advancedClassificationRecursion.o basicClassification.o 
 
 
-libclassrec.so : advancedClassificationRecursion.o basicClassification.o
+recursived : advancedClassificationRecursion.o basicClassification.o
 	${CC} $(FLAGS) -shared -o  libclassrec.so advancedClassificationRecursion.o basicClassification.o 
 
 
@@ -60,4 +60,4 @@ main.o : main.c NumClass.h
 
 
 clean : 
-	rm -f *.o *.a *.so *.exe
+	rm -f *.o *.a *.so
