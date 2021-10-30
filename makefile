@@ -1,4 +1,4 @@
-## -g for debug , Wall warninigs 
+
 
 CC = gcc
 FLAGS = -Wall -g
