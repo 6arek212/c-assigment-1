@@ -12,6 +12,7 @@ AR = ar
 .PHONY : recursived 
 
 
+
 loops : libclassloops.a
 loopd : libclassloops.so
 recursives : libclassrec.a
