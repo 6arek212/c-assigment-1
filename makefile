@@ -22,6 +22,10 @@ recursived : libclassrec.so
 all:  mainsloop mainsrec maindloop maindrec
 
 
+mains :  libclassrec.a main.o
+	$(CC) $(FLAGS) -o mainsrec main.o libclassrec.a
+
+
 mainsloop :  libclassloops.a  main.o
 	$(CC) $(FLAGS) -o mainsloop main.o libclassloops.a
 
