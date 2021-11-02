@@ -23,7 +23,7 @@ all:  mainsloop mainsrec maindloop maindrec
 
 
 mains :  libclassrec.a main.o
-	$(CC) $(FLAGS) -o mainsrec main.o libclassrec.a
+	$(CC) $(FLAGS) -o mains main.o libclassrec.a
 
 
 
