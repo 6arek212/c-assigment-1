@@ -19,7 +19,7 @@ recursives : libclassrec.a
 recursived : libclassrec.so 
 
 
-all:  mainsloop mainsrec maindloop maindrec
+all: mains mainsloop mainsrec maindloop maindrec
 
 
 mains :  libclassrec.a main.o
@@ -81,4 +81,4 @@ main.o : main.c NumClass.h
 
 
 clean : 
-	rm -f *.o *.a *.so mainsloop mainsrec maindloop maindrec
+	rm -f *.o *.a *.so mainsloop mainsrec maindloop maindrec mains
