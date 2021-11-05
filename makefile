@@ -19,7 +19,7 @@ recursives : libclassrec.a
 recursived : libclassrec.so 
 
 
-all: mains maindloop maindrec
+all: mains maindloop maindrec libclassloops.a
 
 
 mains :  libclassrec.a main.o
