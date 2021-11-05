@@ -73,4 +73,4 @@ main.o : main.c NumClass.h
 
 
 clean : 
-	rm -f *.o *.a *.so mainsloop mainsrec maindloop maindrec mains
+	rm -f *.o *.a *.so  maindloop maindrec mains
