@@ -19,19 +19,11 @@ recursives : libclassrec.a
 recursived : libclassrec.so 
 
 
-all: mains mainsloop mainsrec maindloop maindrec
+all: mains maindloop maindrec
 
 
 mains :  libclassrec.a main.o
 	$(CC) $(FLAGS) -o mains main.o libclassrec.a
-
-
-
-mainsloop :  libclassloops.a  main.o
-	$(CC) $(FLAGS) -o mainsloop main.o libclassloops.a
-
-mainsrec :  libclassrec.a main.o
-	$(CC) $(FLAGS) -o mainsrec main.o libclassrec.a
 
 maindloop: libclassloops.so main.o 
 	$(CC) $(FLAGS) -o maindloop main.o ./libclassloops.so 
